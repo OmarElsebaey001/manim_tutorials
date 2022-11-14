@@ -10,7 +10,7 @@ class AnimateDot(Scene):
 
 class CreateDot(Scene):
     def construct(self):
-        dot = Dot()
+        dot = Circle()
         self.play(Create(dot))
         self.play(dot.animate.shift(UP))
         self.play(dot.animate.shift(DOWN))
@@ -50,7 +50,9 @@ class AnimateSquare(Scene):
 class TraceDot(Scene):
     def construct(self):
         a = Dot(RIGHT * 2)
-        b = TracedPath(a.get_center, dissipating_time=0.5, stroke_opacity=[0, 1])
+
+        b = TracedPath(a.get_center, stroke_opacity=[1,0])
+        
         self.add(a,b)
         self.play(a.animate.shift(LEFT * 2))
         self.play(a.animate.shift(RIGHT * 2))

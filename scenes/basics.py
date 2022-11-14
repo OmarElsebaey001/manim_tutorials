@@ -64,6 +64,7 @@ class TextScene(Scene):
 
 class SoundScene(Scene):
     def construct(self):
+        self.camera.background_color = WHITE
         dot = Dot().set_color(GREEN)
         self.add_sound("click.wav")
         self.add(dot)
